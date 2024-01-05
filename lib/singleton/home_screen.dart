@@ -34,7 +34,7 @@ class _HomeScreenSingleTonState extends State<HomeScreenSingleTon> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        singletonData.listObjects.add(teEditingController.text);
+                        singletonData.title = teEditingController.text;
                       });
                     },
                     child: const Text('Save'),
@@ -56,7 +56,7 @@ class _HomeScreenSingleTonState extends State<HomeScreenSingleTon> {
             const SizedBox(height: 12),
             Center(
               child: Text(
-                singletonData.listObjects.toString(),
+                singletonData.title,
                 style: TextStyle(
                   fontSize: 30,
                 ),

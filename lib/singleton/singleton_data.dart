@@ -2,10 +2,10 @@ class SingletonData {
   SingletonData.internal();
   static final _singleton = SingletonData.internal();
 
-  List listObjects = [];
+  String title = '';
 
   void clearList() {
-    listObjects.clear();
+    title = '';
   }
 
   factory SingletonData() {
