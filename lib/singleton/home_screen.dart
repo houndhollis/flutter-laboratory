@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_laboratory/singleton/singleton_data.dart';
 
 class HomeScreenSingleTon extends StatefulWidget {
   const HomeScreenSingleTon({super.key});
@@ -9,6 +10,7 @@ class HomeScreenSingleTon extends StatefulWidget {
 
 class _HomeScreenSingleTonState extends State<HomeScreenSingleTon> {
   TextEditingController teEditingController = TextEditingController();
+  SingletonData singletonData = SingletonData();
 
   @override
   Widget build(BuildContext context) {
@@ -30,21 +32,36 @@ class _HomeScreenSingleTonState extends State<HomeScreenSingleTon> {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        singletonData.listObjects.add(teEditingController.text);
+                      });
+                    },
                     child: const Text('Save'),
                   ),
                 ),
                 const SizedBox(width: 12),
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        singletonData.clearList();
+                      });
+                    },
                     child: const Text('Clear'),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 12),
-            Text('1'),
+            Center(
+              child: Text(
+                singletonData.listObjects.toString(),
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+            ),
           ],
         ),
       ),
