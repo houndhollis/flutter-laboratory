@@ -4,7 +4,7 @@ class SingletonData {
 
   String title = '';
 
-  void clearList() {
+  void clearTitle() {
     title = '';
   }
 

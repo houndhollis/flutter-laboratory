@@ -45,7 +45,7 @@ class _HomeScreenSingleTonState extends State<HomeScreenSingleTon> {
                   child: ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        singletonData.clearList();
+                        singletonData.clearTitle();
                       });
                     },
                     child: const Text('Clear'),
