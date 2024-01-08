@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'todos_model.g.dart';
+
+@JsonSerializable()
 class TodoModel {
   final int userId;
   final int id;
@@ -11,12 +16,15 @@ class TodoModel {
     required this.completed,
   });
 
-  factory TodoModel.fromJson(Map<String, dynamic> json) {
-    return TodoModel(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-      completed: json['completed'],
-    );
-  }
+  factory TodoModel.fromJson(Map<String,dynamic> json)
+  => _$TodoModelFromJson(json);
+
+  // factory TodoModel.fromJson(Map<String, dynamic> json) {
+  //   return TodoModel(
+  //     userId: json['userId'],
+  //     id: json['id'],
+  //     title: json['title'],
+  //     completed: json['completed'],
+  //   );
+  // }
 }
